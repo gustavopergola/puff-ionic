@@ -11,6 +11,7 @@ import { ShowteacherPage } from '../showteacher/showteacher';
 export class HomePage {
 
   constructor(public navCtrl: NavController) {
+ 
   }
   
   login(){

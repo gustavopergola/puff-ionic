@@ -12,10 +12,12 @@ import { UsuarioService } from '../domain/usuario/usuario-service';
 import { RegisterPage } from '../pages/register/register';
 import { TeacherPage } from '../pages/teacher/teacher';
 import { ShowteacherPage } from '../pages/showteacher/showteacher';
+import { RatingPage } from '../pages/rating/rating';
 // import { TeacherIndexPage } from '..pages/teacher-index/teacher-index';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/toPromise';
 import { HttpModule} from '@angular/http';
+import { AuthServiceProvider } from '../providers/auth-service/auth-service';
 
 
 
@@ -27,7 +29,8 @@ import { HttpModule} from '@angular/http';
     DashboardPage,
     RegisterPage,
     TeacherPage,
-    ShowteacherPage
+    ShowteacherPage,
+    RatingPage
   ],
   imports: [
     HttpModule,
@@ -42,13 +45,15 @@ import { HttpModule} from '@angular/http';
     DashboardPage,
     RegisterPage, 
     TeacherPage,
-    ShowteacherPage
+    ShowteacherPage,
+    RatingPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    UsuarioService
+    UsuarioService,
+    AuthServiceProvider
   ]
 })
 export class AppModule {}

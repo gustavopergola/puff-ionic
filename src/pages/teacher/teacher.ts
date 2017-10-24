@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Component, OnInit} from '@angular/core';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { ShowteacherPage } from '../showteacher/showteacher';
+import { Http } from '@angular/http';
 
 /**
  * Generated class for the TeacherPage page.
@@ -14,25 +15,22 @@ import { ShowteacherPage } from '../showteacher/showteacher';
   selector: 'page-teacher',
   templateUrl: 'teacher.html',
 })
-export class TeacherPage {
+export class TeacherPage implements OnInit{
 
   searchQuery: string = '';
   public items;
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-    
-  
-      
-      this.initializeItems();
+  constructor(public navCtrl: NavController, public navParams: NavParams, private _http: Http, private _alertCtrl: AlertController) {
+     this.initializeItems();
   }
   
   
   initializeItems() {
     this.items = [
-    {nome:'Isabel Rosseti', disc: 'Estrutura de Dados'},
-    {nome:'Dante Corbucci', disc: 'Programação de Computadores'},
-    {nome:'Lucia Drummond', disc: 'Sistemas Operacionais'}
+    {name:'Isabel Rosseti', subject: 'Estrutura de Dados'},
+    {name:'Dante Corbucci', subject: 'Programação de Computadores'},
+    {name:'Lucia Drummond', subject: 'Sistemas Operacionais'}
     ];
   }
 
@@ -46,7 +44,7 @@ export class TeacherPage {
     // if the value is an empty string don't filter the items
     if (val && val.trim() != '') {
       this.items = this.items.filter((item) => {
-        return (item.nome.toLowerCase().indexOf(val.toLowerCase()) > -1);
+        return (item.name.toLowerCase().indexOf(val.toLowerCase()) > -1);
       })
     }
   }

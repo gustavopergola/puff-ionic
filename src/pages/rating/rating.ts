@@ -14,7 +14,14 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'rating.html',
 })
 export class RatingPage {
+  public cansativa: number;
+  public acesso: number;
+  public material: number;
 
+  cansativa = 1;
+  acesso = 1;
+  material = 1;
+  
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 

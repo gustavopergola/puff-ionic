@@ -7,12 +7,42 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>rating</ion-title>
+    <ion-title>Avalie seu professor</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+  <ion-list class="options-rating"> 
+  <p>Quão cansativas são as aulas<span>{{cansativa}}</span></p>
+  
+    <ion-item>
+        <ion-range min="1" max="5" step = "1" [(ngModel)]="cansativa" color="primary">
+          <ion-label range-left>1</ion-label>
+          <ion-label range-right>5</ion-label>
+        </ion-range>
+      </ion-item>
+    <p>O Material é de facil acesso? <span>{{acesso}}</span> </p>
+    <ion-item>
+        <ion-range min="1" max="5" step = "1" [(ngModel)]="acesso" color="primary">
+          <ion-label range-left>1</ion-label>
+          <ion-label range-right>5</ion-label>
+        </ion-range>
+      </ion-item>
+          <p>O Material conseguiu suprir a falta das aulas?<span>{{material}}</span> </p>
+    <ion-item>
+        <ion-range min="1" max="5" step = "1" [(ngModel)]="material" color="primary">
+          <ion-label range-left>1</ion-label>
+          <ion-label range-right>5</ion-label>
+        </ion-range>
+      </ion-item>
+      <ion-item>
+        <ion-label color="primary" stacked>Algo a acrescentar?</ion-label>
+        <ion-textarea placeholder="Escreva sua sugestão aqui :)"></ion-textarea>
+      </ion-item>
 
+  </ion-list>  
+  
+    <button ion-button block>Enviar</button>
 </ion-content>

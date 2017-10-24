@@ -12,10 +12,10 @@ export class RegisterPage {
   user = { name: '', reg: '', password: ''};
   
   constructor(public navCtrl: NavController, public navParams: NavParams, private _service: UsuarioService) {
+    alert(this._service.getCurrentUser());
   }
 
   salvaUsuario(){
-    alert("entrou em salva usuario");
     this._service.saveUser(this.user).then((result) => {
       console.log(result);
     }, (err) => {

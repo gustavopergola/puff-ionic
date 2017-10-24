@@ -1,3 +1,21 @@
 page-rating {
 
 }
+.options-rating span{
+    display:block;
+    margin:0 auto;
+    width:25px;
+    height:25px;
+    padding-top: 3px;
+    padding-left: 1px;
+    background:#488aff;
+    text-align:center;
+    border-radius:50%;
+    color:white;
+    margin-top:10px;
+    transition:1s;
+    margin-bottom:-14px;
+}
+.options-rating ion-input{
+    height:300px;
+    }
