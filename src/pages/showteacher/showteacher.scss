@@ -1,3 +1,14 @@
 page-showteacher {
 
 }
+.show-avaliacao{
+    font-size: 1.3rem !important;
+    margin-bottom: 10px!important;
+}
+.show-avaliacao::after{
+    content:'';
+    display: block;
+    width:60%;
+    height:1px;
+    color:#000;
+}

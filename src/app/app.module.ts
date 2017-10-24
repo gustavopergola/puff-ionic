@@ -41,7 +41,8 @@ import { HttpModule} from '@angular/http';
     LoginPage,
     DashboardPage,
     RegisterPage, 
-    TeacherPage
+    TeacherPage,
+    ShowteacherPage
   ],
   providers: [
     StatusBar,

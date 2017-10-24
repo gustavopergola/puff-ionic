@@ -1,12 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the RegisterPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { UsuarioService } from '../../domain/usuario/usuario-service';
 
 @IonicPage()
 @Component({
@@ -15,8 +9,17 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class RegisterPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-    
+  user = { name: '', reg: '', password: ''};
+  
+  constructor(public navCtrl: NavController, public navParams: NavParams, private _service: UsuarioService) {
   }
 
+  salvaUsuario(){
+    alert("entrou em salva usuario");
+    this._service.saveUser(this.user).then((result) => {
+      console.log(result);
+    }, (err) => {
+      console.log(err);
+    });
+  }
 }

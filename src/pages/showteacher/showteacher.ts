@@ -1,13 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
-/**
- * Generated class for the ShowteacherPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
 @IonicPage()
 @Component({
   selector: 'page-showteacher',
@@ -15,11 +8,10 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ShowteacherPage {
 
+  public item;
+  
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad ShowteacherPage');
+    this.item = this.navParams.get('item_selecionado');
   }
 
 }

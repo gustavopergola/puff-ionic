@@ -14,18 +14,18 @@
 <ion-content padding>
 
 <div class="login">
-  <form >
+  <form (ngSubmit)="salvaUsuario()">
     <ion-item>
         <ion-label color="primary" floating>Nome</ion-label>
-        <ion-input></ion-input>
+        <ion-input type="text" [(ngModel)]="user.name" name="name"></ion-input>
     </ion-item>
     <ion-item>
-        <ion-label color="primary"floating>Matricula</ion-label>  
-        <ion-input type="number"></ion-input>
+        <ion-label color="primary"floating>Matrícula</ion-label>  
+        <ion-input type="number" [(ngModel)]="user.reg" name="reg"></ion-input>
     </ion-item>
     <ion-item>
         <ion-label color="primary" floating>Senha</ion-label>
-        <ion-input name="senha" type="password"></ion-input>
+        <ion-input type="password" [(ngModel)]="user.password" name="password"></ion-input>
     </ion-item>
     <ion-list radio-group >
       <ion-label class='eu-register'>Eu sou:</ion-label>
@@ -43,8 +43,6 @@
     
     <button ion-button block type="submit">ENTRAR</button>
   </form>
-  
-  <button ion-button block  (click)="randomUser()">RANDOM USER</button>
 
   </div>
 </ion-content>

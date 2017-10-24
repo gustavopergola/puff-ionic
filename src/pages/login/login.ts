@@ -9,7 +9,6 @@ import 'rxjs/add/operator/map';
 @Component({
   selector: 'page-login',
   templateUrl: 'login.html',
-  
 })
 
 export class LoginPage {
@@ -25,7 +24,7 @@ export class LoginPage {
       .then(dado => 
       { 
         this.numero = dado;
-        alert(this.numero);        //isso executa antes do que o próximo alert
+        //alert(this.numero);        //isso executa antes do que o próximo alert
       });
     
     //alert("this = " + this.numero);  

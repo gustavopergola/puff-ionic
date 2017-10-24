@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { ShowteacherPage } from '../showteacher/showteacher';
 
 /**
  * Generated class for the TeacherPage page.
@@ -16,16 +17,12 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 export class TeacherPage {
 
   searchQuery: string = '';
-  items: string[];
+  public items;
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     
-      // this.profs = [
-      //   {nome:'Isabel Rosseti', disc: 'Estrutura de Dados'},
-      //   {nome:'Dante Corbucci', disc: 'Programação de Computadores'},
-      //   {nome:'Lucia Drummond', disc: 'Sistemas Operacionais'}
-      //   ];
+  
       
       this.initializeItems();
   }
@@ -33,9 +30,9 @@ export class TeacherPage {
   
   initializeItems() {
     this.items = [
-      'Amsterdam',
-      'Bogota',
-      'Rio de Janeiro'
+    {nome:'Isabel Rosseti', disc: 'Estrutura de Dados'},
+    {nome:'Dante Corbucci', disc: 'Programação de Computadores'},
+    {nome:'Lucia Drummond', disc: 'Sistemas Operacionais'}
     ];
   }
 
@@ -49,10 +46,14 @@ export class TeacherPage {
     // if the value is an empty string don't filter the items
     if (val && val.trim() != '') {
       this.items = this.items.filter((item) => {
-        return (item.toLowerCase().indexOf(val.toLowerCase()) > -1);
+        return (item.nome.toLowerCase().indexOf(val.toLowerCase()) > -1);
       })
     }
   }
 
+  showTeacher(item){
+    this.navCtrl.push(ShowteacherPage, {item_selecionado: item});
+  }
+  
   
 }

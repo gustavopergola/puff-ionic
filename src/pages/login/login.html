@@ -18,22 +18,19 @@
   <form (ngSubmit)="login()">
     
     <ion-item>
-        <ion-label color="primary" floating >Email</ion-label>
-        <ion-input [(ngModel)]="email" name="email" type="text"></ion-input>
+        <ion-label color="primary" floating >Matrícula</ion-label>
+        <ion-input [(ngModel)]="user.reg" name="reg" type="text"></ion-input>
     </ion-item>
 
     <ion-item>
         <ion-label color="primary" floating>Senha</ion-label>
-        <ion-input [(ngModel)]="senha" name="senha" type="password"></ion-input>
+        <ion-input [(ngModel)]="user.password" name="senha" type="password"></ion-input>
     </ion-item>
 
     
     <button ion-button block type="submit">ENTRAR</button>
     
     <ion-list>
-     <ion-item *ngFor="let carro of carros">
-      <h2>{{carro}}</h2>
-    </ion-item>
   </ion-list>
   
   </form>

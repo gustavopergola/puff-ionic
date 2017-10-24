@@ -1,22 +1,47 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 
+
 @Injectable()
 export class UsuarioService {
     
     //public dado_id: number;
-    private api: string = 'https://icuff17-api.herokuapp.com/users/2';
+    private api: string = 'https://icuff17-api.herokuapp.com';
     constructor(private _http: Http) {}
 
     efetuaLogin() {
         
         return this._http
-            .get(this.api)
+            .get(this.api + 'users/2')
             .map(res => res.json())
             .toPromise()
             .then(dado => {
                 return dado.id;
             });
+    }
+    
+    saveUser(data) {
+        return new Promise((resolve, reject) => {
+            this._http.post(this.api + '/users', {'user': {'reg': data.reg, 'password': data.password, 'name': data.name}})
+            .subscribe(res => {
+              alert("foi!");
+              resolve(res);
+            }, (err) => {
+              reject(err);
+            });
+        });
+    }
+    
+    login(data){
+        return new Promise((resolve, reject) => {
+            this._http.post(this.api + '/users', {'user': {'reg': data.reg, 'password': data.password, 'name': data.name}})
+            .subscribe(res => {
+              alert("foi!");
+              resolve(res);
+            }, (err) => {
+              reject(err);
+            });
+        });
     }
     
 }

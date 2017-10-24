@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>teacher</ion-title>
+    <ion-title>Professores</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -16,10 +16,15 @@
 <ion-content padding>
   <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
   <ion-list>
-    <ion-card>
-      <ion-item *ngFor="let item of items">
-        <h2>{{ item }}</h2>
+      <ion-item *ngFor="let item of items" (click)="showTeacher(item)">
+        <ion-card>
+          <ion-card-header>
+            <h2>{{ item.nome }}</h2>
+          </ion-card-header>
+          <ion-card-content>
+            <p>{{ item.disc }}</p>
+          </ion-card-content>
+        </ion-card>
       </ion-item>
-    </ion-card>
   </ion-list>
 </ion-content>
