@@ -11,10 +11,10 @@ export class HomePage {
 
   constructor(public navCtrl: NavController) {
   }
-  loginPage(event){
+  login(){
     this.navCtrl.push(LoginPage);
   }
-  registerPage(event){
+  register(){
     this.navCtrl.push(RegisterPage);
   }
 
