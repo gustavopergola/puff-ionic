@@ -29,6 +29,13 @@
 
     
     <button ion-button block type="submit">ENTRAR</button>
+    
+    <ion-list>
+     <ion-item *ngFor="let carro of carros">
+      <h2>{{carro}}</h2>
+    </ion-item>
+  </ion-list>
+  
   </form>
   </div>
 </ion-content>

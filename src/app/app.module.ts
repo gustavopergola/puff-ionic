@@ -10,8 +10,14 @@ import { LoginPage } from '../pages/login/login';
 import { DashboardPage }from '../pages/dashboard/dashboard';
 import { UsuarioService } from '../domain/usuario/usuario-service';
 import { RegisterPage } from '../pages/register/register';
+import { TeacherPage } from '../pages/teacher/teacher';
+import { ShowteacherPage } from '../pages/showteacher/showteacher';
+// import { TeacherIndexPage } from '..pages/teacher-index/teacher-index';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/toPromise';
+import { HttpModule} from '@angular/http';
+
+
 
 @NgModule({
   declarations: [
@@ -19,9 +25,12 @@ import 'rxjs/add/operator/toPromise';
     HomePage,
     LoginPage,
     DashboardPage,
-    RegisterPage
+    RegisterPage,
+    TeacherPage,
+    ShowteacherPage
   ],
   imports: [
+    HttpModule,
     BrowserModule,
     IonicModule.forRoot(MyApp)
   ],
@@ -31,12 +40,14 @@ import 'rxjs/add/operator/toPromise';
     HomePage,
     LoginPage,
     DashboardPage,
-    RegisterPage
+    RegisterPage, 
+    TeacherPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    UsuarioService
   ]
 })
 export class AppModule {}
