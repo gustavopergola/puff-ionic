@@ -1,0 +1,52 @@
+<!--
+  Generated template for the RegisterPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Registre-se </ion-title>
+  </ion-navbar>
+
+</ion-header>
+<ion-content padding>
+
+<div class="login">
+  <form >
+    <ion-item>
+        <ion-label color="primary" floating>Nome</ion-label>
+        <ion-input></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label color="primary"floating>Matricula</ion-label>  
+        <ion-input type="number"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label color="primary" floating >Email</ion-label>
+        <ion-input name="email" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label color="primary" floating>Senha</ion-label>
+        <ion-input name="senha" type="password"></ion-input>
+    </ion-item>
+    <ion-list radio-group >
+      <ion-label color="primary">Eu sou</ion-label>
+      <ion-item>
+        <ion-label>Aluno</ion-label>
+        <ion-radio value="aluno" checked></ion-radio>
+      </ion-item>
+      
+      <ion-item>
+        <ion-label>Professor</ion-label>
+        <ion-radio value="professor"></ion-radio>
+      </ion-item>
+
+    </ion-list>
+    
+    <button ion-button block type="submit">ENTRAR</button>
+  </form>
+  </div>
+</ion-content>

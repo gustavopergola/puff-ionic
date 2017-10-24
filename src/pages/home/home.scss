@@ -1,3 +1,32 @@
+
 page-home {
 
+}
+.titlehome{
+    margin:35px 0px;
+    display:block;
+    width:100%;
+    text-align:center;
+      font-family: 'Comfortaa', cursive;
+    font-size:6rem;
+}
+.titlehome:after{
+    content:'';
+    display:block;
+    width:50%;
+    margin:0 auto;
+    height:3px;
+    margin-top:35px;
+    background:#488aff;
+}
+.sloganhome{
+    font-family:'Comfortaa',cursive;
+    text-align:center;
+}
+.btnhome{
+    margin-top:40px;
+    text-align:center;
+}
+.btnhome p{
+    margin-top:10px;
 }

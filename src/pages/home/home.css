@@ -1,0 +1,13 @@
+@font-face {
+  font-family: comfortaa;
+  src: url(Comfortaa-Bold.ttf); }
+.titlehome {
+  margin: 30px 0px;
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-family: "comfortaa", cursive;
+  font-weight: bold;
+  font-size: 6rem; }
+
+/*# sourceMappingURL=home.css.map */
