@@ -53,4 +53,16 @@ export class UsuarioService {
         return this.current_user;
     }
     
+    getCurretUserName(){
+        return new Promise((resolve, reject) => {
+            this._http.get(this.api + '/users_reg?reg=' + this.current_user)
+            .map(res => res.json())
+            .subscribe(res => {
+              resolve(res.name);
+            }, (err) => {
+              reject(err);
+            });
+        });
+    }
+    
 }

@@ -11,9 +11,8 @@ import { HomePage } from '../home/home';
   templateUrl: 'dashboard.html',
 })
 export class DashboardPage {
-  
-  private user = getCurrentUser()
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  public user_name: string;
+  constructor(public navCtrl: NavController, public navParams: NavParams, private _service: UsuarioService) {
   }
   
   toTeacher(){
@@ -25,5 +24,14 @@ export class DashboardPage {
  logout(){
    this.navCtrl.setRoot(HomePage);
  }
+ 
+ setUserName(){
+    this._service.getCurretUserName().then((result) => {
+      alert(result);
+      //this.user_name = result;
+    }, (err) => {
+      console.log(err);
+    });
+  }
 
 }

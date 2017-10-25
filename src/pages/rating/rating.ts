@@ -3,13 +3,6 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { UsuarioService } from '../../domain/usuario/usuario-service';
 import { TeacherService } from '../../domain/teacher/teacher-service';
 
-/**
- * Generated class for the RatingPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
 @IonicPage()
 @Component({
   selector: 'page-rating',
@@ -27,6 +20,7 @@ export class RatingPage {
   constructor(public navCtrl: NavController, public navParams: NavParams, private _serviceTeacher: TeacherService, private _service: UsuarioService) {
     this.teacher = this.navParams.get('item_selecionado').id;
     this.user = this._service.getCurrentUser();
+    this.setUserName();
   }
   
   rate() {
@@ -42,6 +36,8 @@ export class RatingPage {
       console.log(err);
     });
   }
+  
+  
   
   
 }
