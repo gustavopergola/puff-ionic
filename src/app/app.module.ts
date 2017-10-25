@@ -13,6 +13,7 @@ import { RegisterPage } from '../pages/register/register';
 import { TeacherPage } from '../pages/teacher/teacher';
 import { ShowteacherPage } from '../pages/showteacher/showteacher';
 import { RatingPage } from '../pages/rating/rating';
+import { CommentsPage } from '../pages/comments/comments';  
 // import { TeacherIndexPage } from '..pages/teacher-index/teacher-index';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/toPromise';
@@ -30,7 +31,8 @@ import { TeacherService } from '../domain/teacher/teacher-service';
     RegisterPage,
     TeacherPage,
     ShowteacherPage,
-    RatingPage
+    RatingPage,
+    CommentsPage
   ],
   imports: [
     HttpModule,
@@ -46,7 +48,8 @@ import { TeacherService } from '../domain/teacher/teacher-service';
     RegisterPage, 
     TeacherPage,
     ShowteacherPage,
-    RatingPage
+    RatingPage,
+    CommentsPage
   ],
   providers: [
     StatusBar,

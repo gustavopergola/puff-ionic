@@ -28,8 +28,6 @@ export class TeacherPage implements OnInit{
   }
   
   ngOnInit(){
-    
-
     let loader = this._loadingCtrl.create({
       content: 'Buscando dados dos professores. Aguarde ...'
     });
@@ -71,7 +69,7 @@ export class TeacherPage implements OnInit{
     // if the value is an empty string don't filter the items
     if (val && val.trim() != '') {
       this.items = this.items.filter((item) => {
-        return (item.name.toLowerCase().indexOf(val.toLowerCase()) > -1);
+        return (item.name.toLowerCase().indexOf(val.toLowerCase()) > - 1);
       })
     }
   }

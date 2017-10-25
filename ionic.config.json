@@ -1,6 +1,6 @@
 {
   "name": "hackathon",
-  "app_id": "",
+  "app_id": "ab4d2039",
   "type": "ionic-angular",
   "integrations": {
     "cordova": {}

@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams} from 'ionic-angular';
 import { DashboardPage }from '../dashboard/dashboard';
 import { UsuarioService } from '../../domain/usuario/usuario-service';
-import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 
 @IonicPage()
@@ -17,7 +16,7 @@ export class LoginPage {
   
   user = { reg: '', password: ''};
   
-  constructor(public navCtrl: NavController, private _alertCtrl: AlertController, public navParams: NavParams, private _http: Http, private _service: UsuarioService) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private _service: UsuarioService) {
     
     this._service.efetuaLogin()
       .then(dado => 

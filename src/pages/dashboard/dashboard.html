@@ -21,13 +21,18 @@
     <ion-card-title>Professores</ion-card-title>   
   </ion-card>
 
-  <ion-card >
+  <ion-card (click)='toComments()'>
+    <ion-icon name="create"></ion-icon>
+    <ion-card-title>Avaliações</ion-card-title>   
+  </ion-card>
+
+  <ion-card (click)='toShow()'>
     <ion-icon name="contact"></ion-icon>
     <ion-card-title>Configurações de Perfil</ion-card-title>
   </ion-card>
   
   <ion-card>
-      <ion-icon ios="ios-exit" md="md-exit"></ion-icon>
+      <ion-icon ios="ios-exit" (click)="logout()"md="md-exit"></ion-icon>
     <ion-card-title>Logout</ion-card-title>
   </ion-card>
 

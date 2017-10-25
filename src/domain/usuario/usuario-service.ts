@@ -49,7 +49,7 @@ export class UsuarioService {
         this.current_user = reg;
     }
     
-    getCurrentUser(reg){
+    getCurrentUser(){
         return this.current_user;
     }
     

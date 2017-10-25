@@ -17,7 +17,7 @@ import { TeacherService } from '../../domain/teacher/teacher-service';
 })
 export class RatingPage {
   public array: number[] = [1, 1, 1];
-  private user: number;
+  private user: string;
   private teacher: number;
   
   // cansativa -> 0
