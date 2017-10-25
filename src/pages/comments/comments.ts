@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
 /**
  * Generated class for the CommentsPage page.
  *
@@ -13,7 +13,7 @@ import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angu
   templateUrl: 'comments.html',
 })
 export class CommentsPage {
-  constructor(public navCtrl: NavController, public navParams: NavParams, private modal: ModalController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
@@ -21,9 +21,11 @@ export class CommentsPage {
   }
   openModal(){
     var div = document.querySelector('.comment-expandir');
-    var div2 = document.querySelector('.comment-delimitador');
+
     var fa = document.querySelector('.fa-angle-down');
+
     var fa2 = document.querySelector('.fa-angle-up');
+
     if (fa){
       div.setAttribute("style", "margin-top:0px!important;");  
       fa.setAttribute("class","fa fa-angle-up");

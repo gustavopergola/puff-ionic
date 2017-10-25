@@ -12,6 +12,7 @@ export class RatingPage {
   public array: number[] = [1, 1, 1];
   private user: string;
   private teacher: number;
+  public feedback: string = "";
   
   // cansativa -> 0
   // acesso -> 1
@@ -31,7 +32,7 @@ export class RatingPage {
       aux += n;
     }
     
-    this._serviceTeacher.rate(aux, this.user, this.teacher).then((result) => {
+    this._serviceTeacher.rate(aux, this.user, this.teacher, this.feedback).then((result) => {
       let toast = this.toastCtrl.create({
         message: `Avaliação enviada!`,
         duration: 3000

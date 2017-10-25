@@ -1,0 +1,39 @@
+<!--
+  Generated template for the StatsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Estatisticas</ion-title>
+  </ion-navbar>
+
+</ion-header>
+<ion-content class="dashboard" padding>
+
+  <ion-card >
+      <canvas id="myChart" class="line-chart"width="400" height="400"></canvas>
+    <script>var ctx = document.getElementById('myChart').getContext('2d');
+var chart = new Chart(ctx, {
+    // The type of chart we want to create
+    type: 'line',
+
+    // The data for our dataset
+    data: {
+        labels: ["January", "February", "March", "April", "May", "June", "July"],
+        datasets: [{
+            label: "My First dataset",
+            data: [0, 10, 5, 2, 20, 30, 45],
+        }]
+    },
+
+    // Configuration options go here
+    options: {}
+});
+    </script>
+  </ion-card>
+
+
+</ion-content>

@@ -16,12 +16,15 @@
 
 <ion-content class="dashboard" padding>
 
-  <ion-card *ngIf="is_teacher == false"(click)='toTeacher()'>
+  <ion-card *ngIf="is_Teacher == false"(click)='toTeacher()'>
     <ion-icon name="list-box"></ion-icon>
     <ion-card-title>Professores</ion-card-title>
   </ion-card>
-
-  <ion-card *ngIf="is_teacher == true" (click)='toComments()'>
+  <ion-card *ngIf="is_Teacher == true" (click)='toComments()'>
+    <ion-icon name="stats"></ion-icon>
+    <ion-card-title>Estatisticas</ion-card-title>   
+  </ion-card>
+  <ion-card *ngIf="is_Teacher == true" (click)='toComments()'>
     <ion-icon name="create"></ion-icon>
     <ion-card-title>Avaliações</ion-card-title>   
   </ion-card>
