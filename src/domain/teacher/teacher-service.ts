@@ -23,9 +23,20 @@ export class TeacherService {
     }
     
     rate(rating, user, teacher) {
-        alert(rating);
         return new Promise((resolve, reject) => {
             this._http.post(this.api + '/rate', {'u': user, 't': teacher, 'rating': rating})
+            .subscribe(res => {
+              resolve(res);
+            }, (err) => {
+              reject(err);
+            });
+        });
+    }
+    
+    rating(teacher){
+        return new Promise((resolve, reject) => {
+            this._http.get(this.api + '/rating?teacher=' + teacher)
+            .map(res => res.json())
             .subscribe(res => {
               resolve(res);
             }, (err) => {

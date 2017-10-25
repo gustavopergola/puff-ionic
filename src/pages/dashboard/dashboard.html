@@ -16,23 +16,23 @@
 
 <ion-content class="dashboard" padding>
 
-  <ion-card (click)='toTeacher()'>
+  <ion-card *ngIf="is_teacher == false"(click)='toTeacher()'>
     <ion-icon name="list-box"></ion-icon>
-    <ion-card-title>Professores</ion-card-title>   
+    <ion-card-title>Professores</ion-card-title>
   </ion-card>
 
-  <ion-card (click)='toComments()'>
+  <ion-card *ngIf="is_teacher == true" (click)='toComments()'>
     <ion-icon name="create"></ion-icon>
     <ion-card-title>Avaliações</ion-card-title>   
   </ion-card>
 
-  <ion-card (click)='toShow()'>
-    <ion-icon name="contact"></ion-icon>
-    <ion-card-title>Configurações de Perfil</ion-card-title>
+  <ion-card (click)='toSetting()'>
+    <ion-icon name="lock"></ion-icon>
+    <ion-card-title>Modificar senha</ion-card-title>
   </ion-card>
   
   <ion-card>
-      <ion-icon ios="ios-exit" (click)="logout()"md="md-exit"></ion-icon>
+      <ion-icon ios="ios-exit" md="md-exit" (click)="logout()"></ion-icon>
     <ion-card-title>Logout</ion-card-title>
   </ion-card>
 

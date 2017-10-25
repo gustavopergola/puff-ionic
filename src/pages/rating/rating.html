@@ -15,7 +15,7 @@
 
 <ion-content padding>
   <ion-list class="options-rating"> 
-  <p>Quão cansativas são as aulas<span>{{ array[0] }}</span></p>
+  <p>O quanto o professor prende sua atenção?<span>{{ array[0] }}</span></p>
   
     <ion-item>
         <ion-range color="dark" min="1" max="5" step = "1" [(ngModel)]="array[0]" color="primary">
@@ -23,14 +23,14 @@
           <ion-label range-right>5</ion-label>
         </ion-range>
       </ion-item>
-    <p>O Material é de facil acesso? <span>{{ array[1] }}</span> </p>
+    <p>O Material é de boa qualidade? <span>{{ array[1] }}</span> </p>
     <ion-item>
         <ion-range color="dark" min="1" max="5" step = "1" [(ngModel)]="array[1]" color="primary">
           <ion-label range-left>1</ion-label>
           <ion-label range-right>5</ion-label>
         </ion-range>
       </ion-item>
-          <p>O Material conseguiu suprir a falta das aulas?<span>{{ array[2] }}</span> </p>
+          <p>O quão frequente o professor compareceu às aulas?<span>{{ array[2] }}</span> </p>
     <ion-item>
         <ion-range min="1" color="dark" max="5" step = "1" [(ngModel)]="array[2]" color="primary">
           <ion-label range-left>1</ion-label>

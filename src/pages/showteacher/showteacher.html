@@ -26,18 +26,17 @@
     <ion-card-title>
         {{ item.name }}
       </ion-card-title>
-      <h3 class='show-avaliacao'>x Pessoas avaliam a sua aula como Boa</h3>
-      <h3><i class="fa fa-eye" aria-hidden="true"></i> 70% dos alunos conseguem prestar atenção</h3>
-      <h3><i class="fa fa-book" aria-hidden="true"></i> 90% dos alunos avaliam bem o material </h3>
-      <h3><i class="fa fa-clock-o" aria-hidden="true"></i> 95% de frequencia por parte do professor</h3>
+      <h3><i class="fa fa-eye" aria-hidden="true"></i> <span *ngIf="this.aux[0] <= 0.5">N/A</span><span *ngIf="this.aux[0] > 0.5">{{ aux[0] }}%</span> de foco garantido na aula</h3>
+      <h3><i class="fa fa-book" aria-hidden="true"></i> <span *ngIf="this.aux[1] <= 0.5">N/A</span><span *ngIf="this.aux[1] > 0.5">{{ aux[1] }}%</span> de qualidade do material </h3>
+      <h3><i class="fa fa-clock-o" aria-hidden="true"></i> <span *ngIf="this.aux[2] <= 0.5">N/A</span><span *ngIf="this.aux[2] > 0.5">{{ aux[2] }}%</span> de frequência do professor</h3>
       <h3></h3>
     <p>Professor(a) de {{ item.subject }}</p>
   </ion-card-content>
 
 </ion-card>
-  <span *ngIf="this.loggedIN()">
+  <span *ngIf= "this.loggedIN()">
     <button ion-button block class="" color='primary' (click)="avaliar()"> Avaliar </button>
   </span>
-  <span *ngIf="!this.loggedIN()">
+  <span *ngIf= "!this.loggedIN()">
   </span>
 </ion-content>
