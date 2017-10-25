@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { UsuarioService } from '../../domain/usuario/usuario-service';
+import { TeacherService } from '../../domain/teacher/teacher-service';
 
 /**
  * Generated class for the RatingPage page.
@@ -14,19 +16,32 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'rating.html',
 })
 export class RatingPage {
-  public cansativa: number;
-  public acesso: number;
-  public material: number;
-
-  cansativa = 1;
-  acesso = 1;
-  material = 1;
+  public array: number[] = [1, 1, 1];
+  private user: number;
+  private teacher: number;
   
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
+  // cansativa -> 0
+  // acesso -> 1
+  // material -> 2
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad RatingPage');
+  constructor(public navCtrl: NavController, public navParams: NavParams, private _serviceTeacher: TeacherService, private _service: UsuarioService) {
+    this.teacher = this.navParams.get('item_selecionado').id;
+    this.user = this._service.getCurrentUser();
   }
-
+  
+  rate() {
+    let aux = "";
+    
+    for (let n of this.array){
+      aux += n;
+    }
+    
+    this._serviceTeacher.rate(aux, this.user, this.teacher).then((result) => {
+      console.log(result);
+    }, (err) => {
+      console.log(err);
+    });
+  }
+  
+  
 }

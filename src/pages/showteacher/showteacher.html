@@ -13,9 +13,15 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content padding class="show-teacher">
   <ion-card>
-  <img src="../../assets/imgs/imagePadrao.jpg"/>
+  <div *ngIf="!item.photo" >
+    <img src="../../assets/imgs/imagePadrao.jpg"/>  
+  </div>
+  <div *ngIf="item.photo != ''">
+    <img src="{{item.photo}}"/>  
+  </div>
+  
   <ion-card-content>
     <ion-card-title>
         {{ item.name }}
@@ -23,6 +29,11 @@
       <h3 class='show-avaliacao'>x Pessoas avaliam a sua aula como Boa</h3>
     <p>Professor(a) de {{ item.subject }}</p>
   </ion-card-content>
-  <button ion-button block class="" color='primary' (click)="avaliar()"> Avaliar </button>
+
 </ion-card>
+  <span *ngIf="this.loggedIN()">
+    <button ion-button block class="" color='primary' (click)="avaliar()"> Avaliar </button>
+  </span>
+  <span *ngIf="!this.loggedIN()">
+  </span>
 </ion-content>

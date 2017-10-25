@@ -7,12 +7,28 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Dashboard do usuário X</ion-title>
+  <!--<button ><ion-icon name="menu"></ion-icon></button>-->
+    <ion-title>Dashboard do usuário </ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
+<ion-content class="dashboard" padding>
+
+  <ion-card (click)='toTeacher()'>
+    <ion-icon name="list-box"></ion-icon>
+    <ion-card-title>Professores</ion-card-title>   
+  </ion-card>
+
+  <ion-card >
+    <ion-icon name="contact"></ion-icon>
+    <ion-card-title>Configurações de Perfil</ion-card-title>
+  </ion-card>
+  
+  <ion-card>
+      <ion-icon ios="ios-exit" md="md-exit"></ion-icon>
+    <ion-card-title>Logout</ion-card-title>
+  </ion-card>
 
 </ion-content>

@@ -15,24 +15,24 @@
 
 <ion-content padding>
   <ion-list class="options-rating"> 
-  <p>Quão cansativas são as aulas<span>{{cansativa}}</span></p>
+  <p>Quão cansativas são as aulas<span>{{ array[0] }}</span></p>
   
     <ion-item>
-        <ion-range min="1" max="5" step = "1" [(ngModel)]="cansativa" color="primary">
+        <ion-range color="dark" min="1" max="5" step = "1" [(ngModel)]="array[0]" color="primary">
           <ion-label range-left>1</ion-label>
           <ion-label range-right>5</ion-label>
         </ion-range>
       </ion-item>
-    <p>O Material é de facil acesso? <span>{{acesso}}</span> </p>
+    <p>O Material é de facil acesso? <span>{{ array[1] }}</span> </p>
     <ion-item>
-        <ion-range min="1" max="5" step = "1" [(ngModel)]="acesso" color="primary">
+        <ion-range color="dark" min="1" max="5" step = "1" [(ngModel)]="array[1]" color="primary">
           <ion-label range-left>1</ion-label>
           <ion-label range-right>5</ion-label>
         </ion-range>
       </ion-item>
-          <p>O Material conseguiu suprir a falta das aulas?<span>{{material}}</span> </p>
+          <p>O Material conseguiu suprir a falta das aulas?<span>{{ array[2] }}</span> </p>
     <ion-item>
-        <ion-range min="1" max="5" step = "1" [(ngModel)]="material" color="primary">
+        <ion-range min="1" color="dark" max="5" step = "1" [(ngModel)]="array[2]" color="primary">
           <ion-label range-left>1</ion-label>
           <ion-label range-right>5</ion-label>
         </ion-range>
@@ -44,5 +44,5 @@
 
   </ion-list>  
   
-    <button ion-button block>Enviar</button>
+    <button ion-button block (click)="rate()">Enviar</button>
 </ion-content>

@@ -7,21 +7,16 @@ page-home {
     display:block;
     width:100%;
     text-align:center;
-      font-family: 'Comfortaa', cursive;
-    font-size:6rem;
-}
-.titlehome:after{
-    content:'';
-    display:block;
-    width:50%;
-    margin:0 auto;
-    height:3px;
-    margin-top:35px;
-    background:#488aff;
+font-family: 'Poiret One', cursive;
+    font-size:9rem;
+    text-shadow: 3px 3px 2px #ffff00;
+    // text-shadow: 10px 5px 29px 0px #ffff00;
 }
 .sloganhome{
-    font-family:'Comfortaa',cursive;
+font-family: 'Poiret One', cursive;
     text-align:center;
+    font-size:1.5em;
+    font-weight:bold;
 }
 .btnhome{
     margin-top:40px;
@@ -29,4 +24,13 @@ page-home {
 }
 .btnhome p{
     margin-top:10px;
+}
+.button-ios, .button-md, .button-wp{
+    background:#222;
+}
+a{
+    color:#222;
+}
+.label-md-primary{
+    color:#222!important;
 }

@@ -1,7 +1,7 @@
 import { Component, OnInit} from '@angular/core';
-import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, LoadingController, AlertController} from 'ionic-angular';
 import { ShowteacherPage } from '../showteacher/showteacher';
-import { Http } from '@angular/http';
+import { TeacherService } from '../../domain/teacher/teacher-service';
 
 /**
  * Generated class for the TeacherPage page.
@@ -19,19 +19,46 @@ export class TeacherPage implements OnInit{
 
   searchQuery: string = '';
   public items;
+  public lista_modelo;
 
-
-  constructor(public navCtrl: NavController, public navParams: NavParams, private _http: Http, private _alertCtrl: AlertController) {
-     this.initializeItems();
+  constructor(public navCtrl: NavController, public navParams: NavParams
+  , private _loadingCtrl: LoadingController, private _service: TeacherService,
+  private _alertCtrl: AlertController) {
+     
   }
   
-  
+  ngOnInit(){
+    
+
+    let loader = this._loadingCtrl.create({
+      content: 'Buscando dados dos professores. Aguarde ...'
+    });
+    loader.present();
+    this.getList();
+    loader.dismiss();
+    
+  }
+   
+   getList(){
+    this._service.getTeachers().then((result) => {
+      
+      this.lista_modelo = result;
+      this.initializeItems();
+      
+    }, (err) => {
+      console.log(err);
+      let alert = this._alertCtrl.create({
+            title: 'Falha na conexão!',
+            buttons: [{ text: 'Estou ciente' }],
+            subTitle: 'Não foi possível obter a lista de professores. Tente mais tarde.' 
+        });
+        alert.present();
+      
+    });
+   } 
+    
   initializeItems() {
-    this.items = [
-    {name:'Isabel Rosseti', subject: 'Estrutura de Dados'},
-    {name:'Dante Corbucci', subject: 'Programação de Computadores'},
-    {name:'Lucia Drummond', subject: 'Sistemas Operacionais'}
-    ];
+    this.items = this.lista_modelo;
   }
 
   getItems(ev: any) {

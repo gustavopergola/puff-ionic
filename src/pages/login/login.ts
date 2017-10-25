@@ -23,21 +23,16 @@ export class LoginPage {
       .then(dado => 
       { 
         this.numero = dado;
-        //alert(this.numero);     //isso executa antes do que o próximo alert
       });
     
-    //alert("this = " + this.numero);  
   }
   
   login(){
     this._service.login(this.user).then((result) => {
-      console.log(result);
       if (result){
         this._service.setCurrentUser(this.user.reg);
         this.navCtrl.setRoot(DashboardPage);
       }
-      
-      alert(this._service.getCurrentUser());
     }, (err) => {
       console.log(err);
     });

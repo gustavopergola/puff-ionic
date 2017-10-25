@@ -18,7 +18,7 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/toPromise';
 import { HttpModule} from '@angular/http';
 import { AuthServiceProvider } from '../providers/auth-service/auth-service';
-
+import { TeacherService } from '../domain/teacher/teacher-service';
 
 
 @NgModule({
@@ -53,6 +53,7 @@ import { AuthServiceProvider } from '../providers/auth-service/auth-service';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     UsuarioService,
+    TeacherService,
     AuthServiceProvider
   ]
 })
