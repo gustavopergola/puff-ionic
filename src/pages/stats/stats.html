@@ -12,28 +12,13 @@
 
 </ion-header>
 <ion-content class="dashboard" padding>
+  <canvas id="myChart" ></canvas>
+  
+  <!--<canvas id="myChartFrequencia" ></canvas>-->
 
-  <ion-card >
-      <canvas id="myChart" class="line-chart"width="400" height="400"></canvas>
-    <script>var ctx = document.getElementById('myChart').getContext('2d');
-var chart = new Chart(ctx, {
-    // The type of chart we want to create
-    type: 'line',
-
-    // The data for our dataset
-    data: {
-        labels: ["January", "February", "March", "April", "May", "June", "July"],
-        datasets: [{
-            label: "My First dataset",
-            data: [0, 10, 5, 2, 20, 30, 45],
-        }]
-    },
-
-    // Configuration options go here
-    options: {}
-});
-    </script>
-  </ion-card>
-
-
-</ion-content>
+  
+  <button ion-button block (click)="chartFoco()">Gerar Tabela de Foco</button>
+  <button ion-button block (click)="chartFoco2()">Gerar Tabela de Material</button>
+  <button ion-button block (click)="chartFoco3()">Gerar Tabela de Presença</button>
+  </ion-content>
+  

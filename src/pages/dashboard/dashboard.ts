@@ -6,6 +6,7 @@ import { UsuarioService } from '../../domain/usuario/usuario-service';
 import { HomePage } from '../home/home';
 import { ShowteacherPage } from '../showteacher/showteacher';
 import { SettingPage } from '../setting/setting';
+import { StatsPage } from '../stats/stats';
 
 @IonicPage()
 @Component({
@@ -32,6 +33,9 @@ export class DashboardPage {
   
   toSetting(){
     this.navCtrl.push(SettingPage);
+  }
+  toStats(){
+    this.navCtrl.push(StatsPage);
   }
   
  logout(){

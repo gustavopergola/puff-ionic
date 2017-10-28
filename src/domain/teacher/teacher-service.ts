@@ -47,7 +47,7 @@ export class TeacherService {
     
     feedback(teacher){
         return new Promise((resolve, reject) => {
-            this._http.get(this.api + '/feedback?teacher=' + teacher.id)
+            this._http.get(this.api + '/feedback?teacher=' + teacher)
             .map(res => res.json())
             .subscribe(res => {
               resolve(res);

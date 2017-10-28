@@ -14,16 +14,14 @@
 
 
 <ion-content padding>
-<ion-card >
+<ion-card *ngFor="let f of aux">
   <ion-card-header (click)="openModal()">
     <h2>Avaliação 1</h2>
   </ion-card-header>
   
   <ion-card-content class="comment-delimitador" >
       
-      <h3 class="comment-content" (click)="openModal()">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</h3>
+      <h3 class="comment-content" (click)="openModal()">"{{ f.text }}"</h3>
       <h3 class="comment-expandir" (click)="openModal()" ><i class="fa fa-angle-down" aria-hidden="true"></i></h3>
   </ion-card-content>
-
 </ion-card>
-</ion-content>

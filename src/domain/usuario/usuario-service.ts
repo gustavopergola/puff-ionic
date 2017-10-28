@@ -66,6 +66,18 @@ export class UsuarioService {
         });
     }
     
+    getTeacherId(){
+        return new Promise((resolve, reject) => {
+            this._http.get(this.api + '/users_reg?reg=' + this.current_user)
+            .map(res => res.json())
+            .subscribe(res => {
+              resolve(res.teacher_id);
+            }, (err) => {
+              reject(err);
+            });
+        });
+    }
+    
     getUsuario(){
         return new Promise((resolve, reject) => {
             this._http.get(this.api + '/users_reg?reg=' + this.current_user)

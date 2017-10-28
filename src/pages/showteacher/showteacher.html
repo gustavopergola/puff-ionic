@@ -26,11 +26,26 @@
     <ion-card-title>
         {{ item.name }}
       </ion-card-title>
-      <h3><i class="fa fa-eye" aria-hidden="true"></i> <span *ngIf="this.aux[0] <= 0.5">N/A</span><span *ngIf="this.aux[0] > 0.5">{{ aux[0] }}%</span> de foco garantido na aula</h3>
-      <h3><i class="fa fa-book" aria-hidden="true"></i> <span *ngIf="this.aux[1] <= 0.5">N/A</span><span *ngIf="this.aux[1] > 0.5">{{ aux[1] }}%</span> de qualidade do material </h3>
-      <h3><i class="fa fa-clock-o" aria-hidden="true"></i> <span *ngIf="this.aux[2] <= 0.5">N/A</span><span *ngIf="this.aux[2] > 0.5">{{ aux[2] }}%</span> de frequência do professor</h3>
+      <h3><i class="fa fa-eye" aria-hidden="true"></i> <span *ngIf="this.aux[0] <= 0.5">N/A</span><span *ngIf="this.aux[0] > 0.5">{{ aux[0] }}%</span>de foco garantido na aula</h3>
+      <h3><i class="fa fa-book" aria-hidden="true"></i> <span *ngIf="this.aux[1] <= 0.5">N/A%</span><span *ngIf="this.aux[1] > 0.5">{{ aux[1] }}%</span> de qualidade do material </h3>
+      <h3><i class="fa fa-clock-o" aria-hidden="true"></i> <span *ngIf="this.aux[2] <= 0.5">N/A%</span><span *ngIf="this.aux[2] > 0.5">{{ aux[2] }}%</span> de frequência do professor</h3>
       <h3></h3>
     <p>Professor(a) de {{ item.subject }}</p>
+  </ion-card-content>
+
+
+  </ion-card>
+  <ion-card class="changelog">
+  <ion-card-header>
+    <ion-card-title>
+      <h2 >
+        Comprometimentos
+      </h2>
+    </ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    <p>Melhorar o material de aula</p>
+    <p>Ministrar aulas mais dinâmicas</p>
   </ion-card-content>
 
 </ion-card>
