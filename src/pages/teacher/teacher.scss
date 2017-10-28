@@ -1,0 +1,42 @@
+page-teacher {
+
+}
+.card-md, .card-ios{
+    background:#222;
+    color:white;
+}
+.card-md h2, .card-header-ios h2{
+    color:white;
+    border-bottom:2px solid yellow;
+}
+.item-md p,.item-ios p{
+    color:white;
+}
+.item-md, .item-ios{
+    background:#dedede;
+}
+.content-md, .content-ios{
+    background:#dedede;
+}
+.card-title-md, .card-title-ios{
+    color:white;
+}
+.card-content p, .card-content h3{
+    color:white;
+}
+.item-md{
+    padding:0;
+}
+.teacher .card-md{
+    margin:0;
+    width:100%;
+}
+.label-md, .label-ios{
+    margin:13px 0px;
+}
+.toolbar-title-ios{
+    color:white;
+}
+.bar-button-default-ios{
+    color:yellow;
+}

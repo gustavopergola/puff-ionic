@@ -1,0 +1,33 @@
+page-comments {
+
+}
+*{
+ box-shadow:none!important;   
+}
+.card-header, .card-header-ios{
+    color:white!important;
+    // border-bottom: 2px solid yellow;
+    // margin-bottom:15px;
+}
+h3.comment-content{
+    margin-top:15px!important;
+    transition:.5s all;
+    margin-bottom:0px!important;
+}
+.comment-expandir{
+    text-align:center;
+    transition:.5s all;
+}
+.comment-expandir{
+    font-size: 3.5rem!important;
+    position: relative;
+    padding:20px 10px;
+    margin-top: -180px !important;
+    background: #222 !important;
+    transition:.5s all;
+}
+.comment-delimitador{
+    padding-bottom:0px!important;
+
+  
+}

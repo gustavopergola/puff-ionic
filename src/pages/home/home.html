@@ -1,14 +1,14 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-navbar>
-</ion-header>
+<link href="https://fonts.googleapis.com/css?family=Baumans" rel="stylesheet">
 
+ 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <p class="titlehome">PUFF</p>
+  <p class="sloganhome">Torne a UFF mais didática</p>
+  <div class="btnhome">
+    <button ion-button block (click)="login()">Entrar</button>
+    Não tem cadastro? <a href="#" (click)="register()">Cadastrar-se</a><br>
+    <!--Método teste <a href="#" (click)="testMethod()">Cadastrar-se</a><br>--> 
+    <button ion-button round (click)="indexTeacher()" class='btnprofhome'>Professores</button>
+  </div>
+
 </ion-content>

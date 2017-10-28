@@ -1,0 +1,22 @@
+page-dashboard {
+
+}
+.dashboard ion-icon{
+    display: block!important;
+    font-size: 3.2em!important;
+    text-align: center!important;
+    color:white!important;
+}
+.dashboard ion-card-title{
+    text-align:center;
+    color:white!important;
+}
+.dashboard ion-card{
+    padding:30px 0;
+    background:#222!important;
+    border-bottom:5px solid yellow;
+    cursor:pointer;
+}
+button{
+        border-bottom:2px solid yellow;
+}

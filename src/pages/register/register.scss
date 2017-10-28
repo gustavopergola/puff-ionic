@@ -1,0 +1,29 @@
+page-register {
+
+}
+.eu-register{
+    font-size:1.6rem;
+    margin-left:11px;
+    margin-top:20px;
+}
+ion-radio button{
+    border:none;
+    background:none!important;
+}
+.radio-checked{
+    border-color:#222;
+}
+.radio-inner{
+    background:#222!important;
+}
+.item-radio-checked.item-md ion-label, .label-ios{
+    color:#222!important;
+}
+.input-cover, .input-ios{
+    border-bottom: 1px solid #222;
+
+}
+
+.searchbar-ios .searchbar-clear-icon{
+    background:none!important;
+}
