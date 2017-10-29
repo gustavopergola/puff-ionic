@@ -30,19 +30,21 @@ export class RegisterPage {
           if (result){
             this._service.setCurrentUser(this.user.reg);
             loader.dismiss();
+            let alert = this._alertCtrl.create({
+              title: 'Olá!',
+              subTitle: 'Bem vindo, '+this.user.name+'!',
+              buttons: ['Bora!']
+              });
+              alert.present();
             this.navCtrl.setRoot(DashboardPage);
           }
         }, (err) => {
+          loader.dismiss();
           console.log(err);
         });
       
   
-      let alert = this._alertCtrl.create({
-      title: 'Olá!',
-      subTitle: 'Bem vindo, '+this.user.name+'!',
-      buttons: ['Bora!']
-      });
-      alert.present();
+      
     }, (err) => {
       console.log(err);
     });
