@@ -38,6 +38,16 @@ export class RegisterPage {
               alert.present();
             this.navCtrl.setRoot(DashboardPage);
           }
+          else{
+            loader.dismiss();
+            let falha = this._alertCtrl.create({
+              title: 'Falha no cadastro',
+              subTitle: 'Informações inválidas',
+              buttons: ['Entendido!']
+            });
+            falha.present();
+            
+          }
         }, (err) => {
           loader.dismiss();
           console.log(err);
