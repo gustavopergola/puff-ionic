@@ -11,8 +11,8 @@ professor que faça mais sentido para ele.
 - Node 6.11
 
 Como usar:
-  - Dê pull no projeto
-  - Instale dependências
-      - Automáticas
-      - npm install chart.js
+  #### Dê pull no projeto
+  #### Instale dependências
+      Automáticas
+      npm install chart.js
       
