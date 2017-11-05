@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+<<<<<<< HEAD
 import {Chart} from 'chart.js';
+=======
+>>>>>>> af17a751b4d17fee04024433aff1dde68409662d
 
 /**
  * Generated class for the StatsPage page.

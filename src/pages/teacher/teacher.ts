@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 import { Component, OnInit } from '@angular/core';
 import { IonicPage, NavController, NavParams, LoadingController, AlertController } from 'ionic-angular';
+=======
+import { Component, OnInit} from '@angular/core';
+import { IonicPage, NavController, NavParams, LoadingController, AlertController} from 'ionic-angular';
+>>>>>>> af17a751b4d17fee04024433aff1dde68409662d
 import { ShowteacherPage } from '../showteacher/showteacher';
 import { TeacherService } from '../../domain/teacher/teacher-service';
 
@@ -15,13 +20,18 @@ import { TeacherService } from '../../domain/teacher/teacher-service';
   selector: 'page-teacher',
   templateUrl: 'teacher.html',
 })
+<<<<<<< HEAD
 export class TeacherPage implements OnInit {
+=======
+export class TeacherPage implements OnInit{
+>>>>>>> af17a751b4d17fee04024433aff1dde68409662d
 
   searchQuery: string = '';
   public items;
   public lista_modelo;
 
   constructor(public navCtrl: NavController, public navParams: NavParams
+<<<<<<< HEAD
     , private _loadingCtrl: LoadingController, private _service: TeacherService,
     private _alertCtrl: AlertController) {
 
@@ -29,10 +39,19 @@ export class TeacherPage implements OnInit {
 
   ngOnInit() {
 
+=======
+  , private _loadingCtrl: LoadingController, private _service: TeacherService,
+  private _alertCtrl: AlertController) {
+     
+  }
+  
+  ngOnInit(){
+>>>>>>> af17a751b4d17fee04024433aff1dde68409662d
     let loader = this._loadingCtrl.create({
       content: 'Buscando dados dos professores. Aguarde ...'
     });
     loader.present();
+<<<<<<< HEAD
 
     this._service.getTeachers().then((result) => {
 
@@ -55,6 +74,31 @@ export class TeacherPage implements OnInit {
   }
 
 
+=======
+    this.getList();
+    loader.dismiss();
+    
+  }
+   
+   getList(){
+    this._service.getTeachers().then((result) => {
+      
+      this.lista_modelo = result;
+      this.initializeItems();
+      
+    }, (err) => {
+      console.log(err);
+      let alert = this._alertCtrl.create({
+            title: 'Falha na conexão!',
+            buttons: [{ text: 'Estou ciente' }],
+            subTitle: 'Não foi possível obter a lista de professores. Tente mais tarde.' 
+        });
+        alert.present();
+      
+    });
+   } 
+    
+>>>>>>> af17a751b4d17fee04024433aff1dde68409662d
   initializeItems() {
     this.items = this.lista_modelo;
   }
@@ -74,9 +118,17 @@ export class TeacherPage implements OnInit {
     }
   }
 
+<<<<<<< HEAD
   showTeacher(item) {
     this.navCtrl.push(ShowteacherPage, { item_selecionado: item });
   }
 
 
+=======
+  showTeacher(item){
+    this.navCtrl.push(ShowteacherPage, {item_selecionado: item});
+  }
+  
+  
+>>>>>>> af17a751b4d17fee04024433aff1dde68409662d
 }
