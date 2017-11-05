@@ -15,13 +15,12 @@
 
 <ion-content padding>
 <ion-card *ngFor="let f of aux">
-  <ion-card-header (click)="openModal()">
-    <h2>Avaliação 1</h2>
+  <ion-card-header (click) = "openModal(f.id)">
+    <h2>Avaliação <span class="counter"></span></h2>
   </ion-card-header>
   
-  <ion-card-content class="comment-delimitador" >
-      
-      <h3 class="comment-content" (click)="openModal()">"{{ f.text }}"</h3>
-      <h3 class="comment-expandir" (click)="openModal()" ><i class="fa fa-angle-down" aria-hidden="true"></i></h3>
+  <ion-card-content class="comment-delimitador" id="comment-delimitador-{{f.id}}" >
+      <h3 class="comment-content comment-content-{{f.id}}" (click)="openModal(f.id)">"{{ f.text }}"</h3>
+      <h3 class="comment-expandir comment-expandir-{{f.id}}" (click)="openModal(f.id)" ><i class="fa fa-angle-down fa-angle-down-{{f.id}}" aria-hidden="true"></i></h3>
   </ion-card-content>
 </ion-card>
