@@ -40,6 +40,7 @@
   },
   "devDependencies": {
     "@ionic/app-scripts": "3.0.1",
+    "@ionic/cli-plugin-ionic-angular": "1.4.1",
     "typescript": "2.3.4"
   },
   "description": "An Ionic project",
