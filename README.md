@@ -10,7 +10,7 @@ professor que faça mais sentido para ele.
 - Ionic 3.15
 - Node 6.11
 
-# Como usar
+## Como usar
   Dê pull no projeto
   npm install chart.js
       
