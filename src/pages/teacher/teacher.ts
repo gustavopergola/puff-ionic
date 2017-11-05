@@ -1,5 +1,5 @@
-import { Component, OnInit} from '@angular/core';
-import { IonicPage, NavController, NavParams, LoadingController, AlertController} from 'ionic-angular';
+import { Component, OnInit } from '@angular/core';
+import { IonicPage, NavController, NavParams, LoadingController, AlertController } from 'ionic-angular';
 import { ShowteacherPage } from '../showteacher/showteacher';
 import { TeacherService } from '../../domain/teacher/teacher-service';
 
@@ -15,46 +15,46 @@ import { TeacherService } from '../../domain/teacher/teacher-service';
   selector: 'page-teacher',
   templateUrl: 'teacher.html',
 })
-export class TeacherPage implements OnInit{
+export class TeacherPage implements OnInit {
 
   searchQuery: string = '';
   public items;
   public lista_modelo;
 
   constructor(public navCtrl: NavController, public navParams: NavParams
-  , private _loadingCtrl: LoadingController, private _service: TeacherService,
-  private _alertCtrl: AlertController) {
-     
+    , private _loadingCtrl: LoadingController, private _service: TeacherService,
+    private _alertCtrl: AlertController) {
+
   }
-  
-  ngOnInit(){
+
+  ngOnInit() {
+
     let loader = this._loadingCtrl.create({
       content: 'Buscando dados dos professores. Aguarde ...'
     });
     loader.present();
-    this.getList();
-    loader.dismiss();
-    
-  }
-   
-   getList(){
+
     this._service.getTeachers().then((result) => {
-      
+
       this.lista_modelo = result;
       this.initializeItems();
-      
+      loader.dismiss();
     }, (err) => {
       console.log(err);
       let alert = this._alertCtrl.create({
-            title: 'Falha na conexão!',
-            buttons: [{ text: 'Estou ciente' }],
-            subTitle: 'Não foi possível obter a lista de professores. Tente mais tarde.' 
-        });
-        alert.present();
-      
+        title: 'Falha na conexão!',
+        buttons: [{ text: 'Estou ciente' }],
+        subTitle: 'Não foi possível obter a lista de professores. Tente mais tarde.'
+      });
+      alert.present();
+
     });
-   } 
-    
+
+
+
+  }
+
+
   initializeItems() {
     this.items = this.lista_modelo;
   }
@@ -74,9 +74,9 @@ export class TeacherPage implements OnInit{
     }
   }
 
-  showTeacher(item){
-    this.navCtrl.push(ShowteacherPage, {item_selecionado: item});
+  showTeacher(item) {
+    this.navCtrl.push(ShowteacherPage, { item_selecionado: item });
   }
-  
-  
+
+
 }

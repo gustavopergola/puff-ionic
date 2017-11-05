@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {Chart} from 'chart.js';
 
 /**
  * Generated class for the StatsPage page.
@@ -21,7 +22,7 @@ export class StatsPage {
 
   chartFoco(){
       var ctx =document.querySelector('#myChart');
-      var chart = new Chart(ctx, {
+      new Chart(ctx, {
     type: 'line',
     data:  {
         labels: ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun","Jul","Ago","Set","Out","Nov","Dez"],
@@ -44,7 +45,7 @@ export class StatsPage {
   
     chartFoco2(){
       var ctx =document.querySelector('#myChart');
-      var chart = new Chart(ctx, {
+      new Chart(ctx, {
     type: 'line',
     data:  {
         labels: ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun","Jul","Ago","Set","Out","Nov","Dez"],
@@ -66,7 +67,7 @@ export class StatsPage {
   }
     chartFoco3(){
       var ctx =document.querySelector('#myChart');
-      var chart = new Chart(ctx, {
+      new Chart(ctx, {
     type: 'line',
     data:  {
         labels: ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun","Jul","Ago","Set","Out","Nov","Dez"],
