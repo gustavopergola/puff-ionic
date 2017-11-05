@@ -1,26 +1,18 @@
-This is a starter template for [Ionic](http://ionicframework.com/docs/) projects.
+# PUFF
+### Professores UFF
 
-## How to use this template
+App voltado para colaboração de feedbacks para professores do IC  da UFF de Niterói e ajuda para os alunos escolherem o 
+professor que faça mais sentido para ele.
 
-*This template does not work on its own*. The shared files for each starter are found in the [ionic2-app-base repo](https://github.com/ionic-team/ionic2-app-base).
+## Infos gerais
 
-To use this template, either create a new ionic project using the ionic node.js utility, or copy the files from this repository into the [Starter App Base](https://github.com/ionic-team/ionic2-app-base).
+- Backend API em Rails 5 (https://github.com/Vipkry/rails-api-hackathon-icuff-2017)
+- Ionic 3.15
+- Node 6.11
 
-### With the Ionic CLI:
-
-Take the name after `ionic2-starter-`, and that is the name of the template to be used when using the `ionic start` command below:
-
-```bash
-$ sudo npm install -g ionic cordova
-$ ionic start myBlank blank
-```
-
-Then, to run it, cd into `myBlank` and run:
-
-```bash
-$ ionic cordova platform add ios
-$ ionic cordova run ios
-```
-
-Substitute ios for android if not on a Mac.
-
+Como usar:
+  - Dê pull no projeto
+  - Instale dependências
+      - Automáticas
+      - npm install chart.js
+      
