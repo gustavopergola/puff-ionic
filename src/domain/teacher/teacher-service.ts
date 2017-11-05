@@ -56,4 +56,16 @@ export class TeacherService {
             });
         });
     }
+
+    stats(param, teacher_id){
+        return new Promise((resolve, reject) => {
+            this._http.get(this.api + '/stats?teacher_id='+teacher_id+'&param='+param)
+            .map(res => res.json())
+            .subscribe(res =>{
+                resolve(res);
+            }, (err) => {
+                reject(err);
+            });
+        });
+    }
 }
