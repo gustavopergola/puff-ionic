@@ -1,15 +1,6 @@
 {
-<<<<<<< HEAD
   "name": "teste",
   "app_id": "6113eefd",
   "type": "ionic-angular",
   "integrations": {}
-=======
-  "name": "hackathon",
-  "app_id": "e98fcaba",
-  "type": "ionic-angular",
-  "integrations": {
-    "cordova": {}
-  }
->>>>>>> af17a751b4d17fee04024433aff1dde68409662d
 }
