@@ -36,7 +36,6 @@
     "@ionic/cli-plugin-ionic-angular": "1.4.1",
     "typescript": "2.3.4"
   },
-<<<<<<< HEAD
   "description": "An Ionic project",
   "cordova": {
     "plugins": {
@@ -51,7 +50,5 @@
       "android"
     ]
   }
-=======
   "description": "An Ionic project"
->>>>>>> 3b53a0d5362405d29eea33ba794a24fb852f7fe1
 }
