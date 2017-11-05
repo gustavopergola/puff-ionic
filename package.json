@@ -4,12 +4,12 @@
   "author": "Ionic Framework",
   "homepage": "http://ionicframework.com/",
   "private": true,
-  "scripts": {
-    "clean": "ionic-app-scripts clean",
-    "build": "ionic-app-scripts build",
-    "lint": "ionic-app-scripts lint",
-    "ionic:build": "ionic-app-scripts build",
-    "ionic:serve": "ionic-app-scripts serve"
+  "s": {
+    "clean": "ionic-app-s clean",
+    "build": "ionic-app-s build",
+    "lint": "ionic-app-s lint",
+    "ionic:build": "ionic-app-s build",
+    "ionic:serve": "ionic-app-s serve"
   },
   "dependencies": {
     "@angular/common": "4.4.4",
@@ -32,23 +32,8 @@
     "zone.js": "0.8.18"
   },
   "devDependencies": {
-    "@ionic/app-scripts": "3.0.1",
-    "@ionic/cli-plugin-ionic-angular": "1.4.1",
-    "typescript": "2.3.4"
+    "@ionic/app-s": "3.0.1",
+    "type": "2.3.4"
   },
-  "description": "An Ionic project",
-  "cordova": {
-    "plugins": {
-      "cordova-plugin-x-toast": {},
-      "ionic-plugin-keyboard": {},
-      "cordova-plugin-whitelist": {},
-      "cordova-plugin-device": {},
-      "cordova-plugin-splashscreen": {},
-      "cordova-plugin-ionic-webview": {}
-    },
-    "platforms": [
-      "android"
-    ]
-  }
-  "description": "An Ionic project"
+  "deion": "An Ionic project"
 }
