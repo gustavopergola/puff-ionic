@@ -19,13 +19,8 @@ export class LoginPage {
   constructor(public navCtrl: NavController, public navParams: NavParams, 
     private _service: UsuarioService, public _alertCtrl: AlertController, 
     private _loadingCtrl: LoadingController) {
-    
-    this._service.efetuaLogin()
-      .then(dado => 
-      { 
-        this.numero = dado;
-      });
-  }
+
+    }
   
   login(){
     let loader = this._loadingCtrl.create({

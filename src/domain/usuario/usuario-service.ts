@@ -12,17 +12,6 @@ export class UsuarioService {
     private current_user: string = 'randomString';
     
     constructor(private _http: Http) {}
-
-    // deprecated? don't think so. returning server error 401 somewhere
-    efetuaLogin() {
-        return this._http
-            .get(this.api + '/users/2')
-            .map(res => res.json())
-            .toPromise()
-            .then(dado => {
-                return dado.id;
-            });
-    }
     
     saveUser(data) {
         return new Promise((resolve, reject) => {
@@ -41,7 +30,6 @@ export class UsuarioService {
             .map(res => res.json())
             .subscribe(res => {
               this.current_user = res.auth_token;
-              console.log(this.current_user);
               resolve(res);
             }, (err) => {
               reject(err);
@@ -70,7 +58,10 @@ export class UsuarioService {
     
     getTeacherId(){
         return new Promise((resolve, reject) => {
-            this._http.get(this.api + '/users_reg?reg=' + this.current_user)
+            let headers = new Headers();
+            headers.set('Authorization', this.current_user);
+            let options = new RequestOptions({ headers: headers });
+            this._http.get(this.api + '/users_reg', options)
             .map(res => res.json())
             .subscribe(res => {
               resolve(res.teacher_id);
@@ -97,7 +88,12 @@ export class UsuarioService {
     
     changePassword(data){
         return new Promise((resolve, reject) => {
-            this._http.post(this.api + '/change', {'reg': this.current_user, 'password': data.password, 'password_new': data.password_new, 'password_new_confirmation': data.password_new_confirmation})
+            let headers = new Headers();
+            headers.set('Authorization', this.current_user);
+            let options = new RequestOptions({ headers: headers });
+            this._http.post(this.api + '/change',
+             {'reg': this.current_user, 'password': data.password, 'password_new': data.password_new, 'password_new_confirmation': data.password_new_confirmation},
+             options)
             .map(res => res.json())
             .subscribe(res => {
               resolve(res);
