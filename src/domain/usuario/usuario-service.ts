@@ -1,18 +1,19 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
+import { Http, Headers, RequestOptions } from '@angular/http';
 
 
 @Injectable()
 export class UsuarioService {
     
     //public dado_id: number;
-    private api: string = 'https://icuff17-api.herokuapp.com';
+    private api: string = 'http://localhost:3000';
     
-    //é a matrícula
+    // auth_token
     private current_user: string = 'randomString';
     
     constructor(private _http: Http) {}
 
+    // deprecated? don't think so. returning server error 401 somewhere
     efetuaLogin() {
         return this._http
             .get(this.api + '/users/2')
@@ -54,9 +55,13 @@ export class UsuarioService {
         return this.current_user;
     }
     
-    getCurretUserName(){
+    getCurrentUserName(){
         return new Promise((resolve, reject) => {
-            this._http.get(this.api + '/users_reg?reg=' + this.current_user)
+            let headers = new Headers();
+            headers.set('Authorization', this.current_user);
+            let options = new RequestOptions({ headers: headers });
+            console.log(options);
+            this._http.get(this.api + '/users_reg', options)
             .map(res => res.json())
             .subscribe(res => {
               resolve(res.name);
@@ -80,7 +85,11 @@ export class UsuarioService {
     
     getUsuario(){
         return new Promise((resolve, reject) => {
-            this._http.get(this.api + '/users_reg?reg=' + this.current_user)
+            let headers = new Headers();
+            headers.set('Authorization', this.current_user);
+            let options = new RequestOptions({ headers: headers });
+            console.log(options);
+            this._http.get(this.api + '/users_reg', options)
             .map(res => res.json())
             .subscribe(res => {
               resolve(res.teacher);
