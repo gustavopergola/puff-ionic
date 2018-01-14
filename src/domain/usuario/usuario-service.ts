@@ -49,10 +49,6 @@ export class UsuarioService {
         });
     }
     
-    setCurrentUser(reg){
-        this.current_user = reg;
-    }
-    
     getCurrentUser(){
         return this.current_user;
     }

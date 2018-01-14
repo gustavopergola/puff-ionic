@@ -6,7 +6,7 @@ import { Http } from '@angular/http';
 export class TeacherService {
     
     //public dado_id: number;
-    private api: string = 'https://icuff17-api.herokuapp.com';
+    private api: string = 'http://localhost:3000';
     
     public current_teacher: number = 0;
     
