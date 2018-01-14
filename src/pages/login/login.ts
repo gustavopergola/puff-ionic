@@ -35,7 +35,6 @@ export class LoginPage {
 
     this._service.login(this.user).then((result) => {
       if (result){
-        this._service.setCurrentUser(result);
         loader.dismiss();
         this.navCtrl.setRoot(DashboardPage);
       }else {

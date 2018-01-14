@@ -40,6 +40,8 @@ export class UsuarioService {
             this._http.post(this.api + '/login', {'reg': data.reg, 'password': data.password})
             .map(res => res.json())
             .subscribe(res => {
+              this.current_user = res.auth_token;
+              console.log(this.current_user);
               resolve(res);
             }, (err) => {
               reject(err);
@@ -60,7 +62,6 @@ export class UsuarioService {
             let headers = new Headers();
             headers.set('Authorization', this.current_user);
             let options = new RequestOptions({ headers: headers });
-            console.log(options);
             this._http.get(this.api + '/users_reg', options)
             .map(res => res.json())
             .subscribe(res => {
@@ -88,7 +89,6 @@ export class UsuarioService {
             let headers = new Headers();
             headers.set('Authorization', this.current_user);
             let options = new RequestOptions({ headers: headers });
-            console.log(options);
             this._http.get(this.api + '/users_reg', options)
             .map(res => res.json())
             .subscribe(res => {
