@@ -1,6 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers, RequestOptions } from '@angular/http';
 
+class Usuario {
+    public auth_token: string;
+    public name: string;
+    public reg: string;
+    public teacher_id: number;
+    
+}
 
 @Injectable()
 export class UsuarioService {

@@ -39,7 +39,6 @@ export class DashboardPage {
   }
   
  logout(){
-   console.log('entrou');
    this._service.logout();
    this.navCtrl.setRoot(HomePage);
  }

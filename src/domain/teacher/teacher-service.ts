@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
+import { Http, Headers, RequestOptions } from '@angular/http';
 
 
 @Injectable()
@@ -22,9 +22,12 @@ export class TeacherService {
             });
     }
     
-    rate(rating, user, teacher, feedback) {
+    rate(rating, user, teacher, feedback, current_user) {
         return new Promise((resolve, reject) => {
-            this._http.post(this.api + '/rate', {'u': user, 't': teacher, 'rating': rating, 'feedback': feedback})
+            let headers = new Headers();
+            headers.set('Authorization', current_user);
+            let options = new RequestOptions({ headers: headers });
+            this._http.post(this.api + '/rate', {'u': user, 't': teacher, 'rating': rating, 'feedback': feedback}, options)
             .subscribe(res => {
               resolve(res);
             }, (err) => {
@@ -33,6 +36,7 @@ export class TeacherService {
         });
     }
     
+    // get rate values from teacher
     rating(teacher){
         return new Promise((resolve, reject) => {
             this._http.get(this.api + '/rating?teacher=' + teacher)
@@ -45,9 +49,12 @@ export class TeacherService {
         });
     }
     
-    feedback(teacher){
+    feedback(current_user){
         return new Promise((resolve, reject) => {
-            this._http.get(this.api + '/feedback?teacher=' + teacher)
+            let headers = new Headers();
+            headers.set('Authorization', current_user);
+            let options = new RequestOptions({ headers: headers });
+            this._http.get(this.api + '/feedback', options)
             .map(res => res.json())
             .subscribe(res => {
               resolve(res);
@@ -57,9 +64,13 @@ export class TeacherService {
         });
     }
 
-    stats(param, teacher_id){
+    // get stats for graphical inteface on teachers
+    stats(param, current_user){
         return new Promise((resolve, reject) => {
-            this._http.get(this.api + '/stats?teacher_id='+teacher_id+'&param='+param)
+            let headers = new Headers();
+            headers.set('Authorization', current_user);
+            let options = new RequestOptions({ headers: headers });
+            this._http.get(this.api + '/stats?' + '&param=' + param, options)
             .map(res => res.json())
             .subscribe(res =>{
                 resolve(res);

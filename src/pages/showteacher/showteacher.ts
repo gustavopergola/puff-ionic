@@ -25,12 +25,10 @@ export class ShowteacherPage {
   }
   
   setTaxes(){
-    console.log(this.item.id);
     this._serviceTeacher.rating(this.item.id).then((result) => {
-      console.log(result);
-      this.aux[0] = result[0];
-      this.aux[1] = result[1];
-      this.aux[2] = result[2];
+      this.aux[0] = result[0] ? result[0] : 0.001;
+      this.aux[1] = result[1] ? result[1] : 0.001;
+      this.aux[2] = result[2] ? result[2] : 0.001;
     }, (err) => {
       console.log(err);
     });
