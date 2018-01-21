@@ -29,19 +29,23 @@ export class LoginPage {
     loader.present();
 
     this._service.login(this.user).then((result) => {
-      if (result){
-        loader.dismiss();
-        this.navCtrl.setRoot(DashboardPage);
-      }else {
-        loader.dismiss();
+      loader.dismiss();
+      this.navCtrl.setRoot(DashboardPage);
+    }, (err) => {
+      loader.dismiss();
+      if (err.status == 401){
         let alert = this._alertCtrl.create({
-          title: 'Combinação incorreta!',
+          title: 'Combinação inválida.',
           buttons: ['Ok']
         });
-      alert.present();
+        alert.present();  
+      }else {
+        let alert = this._alertCtrl.create({
+          title: 'Servidor indisponível.',
+          buttons: ['Ok']
+        });
+        alert.present();  
       }
-    }, (err) => {
-      console.log(err);
     });
   }
   
