@@ -22,8 +22,7 @@ export class RatingPage {
     private _serviceTeacher: TeacherService, private _service: UsuarioService, 
     public toastCtrl: ToastController, private _loadingCtrl: LoadingController) {
     this.teacher = this.navParams.get('item_selecionado').id;
-    this.user = this._service.getCurrentUser();
-    
+    this.user = this._service.getCurrentUser();  
   }
   
   rate() {
@@ -38,16 +37,14 @@ export class RatingPage {
     });
     loader.present();
 
-    this._serviceTeacher.rate(aux, this.user, this.teacher, this.feedback).then((result) => {
+    this._serviceTeacher.rate(aux, this.user, this.teacher, this.feedback, this._service.getCurrentUser()).then((result) => {
       let toast = this.toastCtrl.create({
         message: `Avaliação enviada!`,
         duration: 3000
       });
-      console.log("Toast exibido");
       toast.present();
       loader.dismiss();
       this.navCtrl.popTo(this.navCtrl.getByIndex(this.navCtrl.length()-3));
-      console.log(result);
     }, (err) => {
       loader.dismiss();
       console.log(err);

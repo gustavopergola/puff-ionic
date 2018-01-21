@@ -19,13 +19,8 @@ export class LoginPage {
   constructor(public navCtrl: NavController, public navParams: NavParams, 
     private _service: UsuarioService, public _alertCtrl: AlertController, 
     private _loadingCtrl: LoadingController) {
-    
-    this._service.efetuaLogin()
-      .then(dado => 
-      { 
-        this.numero = dado;
-      });
-  }
+
+    }
   
   login(){
     let loader = this._loadingCtrl.create({
@@ -35,7 +30,6 @@ export class LoginPage {
 
     this._service.login(this.user).then((result) => {
       if (result){
-        this._service.setCurrentUser(this.user.reg);
         loader.dismiss();
         this.navCtrl.setRoot(DashboardPage);
       }else {

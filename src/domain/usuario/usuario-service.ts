@@ -1,27 +1,24 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
+import { Http, Headers, RequestOptions } from '@angular/http';
 
+class Usuario {
+    public auth_token: string;
+    public name: string;
+    public reg: string;
+    public teacher_id: number;
+    
+}
 
 @Injectable()
 export class UsuarioService {
     
     //public dado_id: number;
-    private api: string = 'https://icuff17-api.herokuapp.com';
+    private api: string = 'http://localhost:3000';
     
-    //é a matrícula
+    // auth_token
     private current_user: string = 'randomString';
     
     constructor(private _http: Http) {}
-
-    efetuaLogin() {
-        return this._http
-            .get(this.api + '/users/2')
-            .map(res => res.json())
-            .toPromise()
-            .then(dado => {
-                return dado.id;
-            });
-    }
     
     saveUser(data) {
         return new Promise((resolve, reject) => {
@@ -39,6 +36,7 @@ export class UsuarioService {
             this._http.post(this.api + '/login', {'reg': data.reg, 'password': data.password})
             .map(res => res.json())
             .subscribe(res => {
+              this.current_user = res.auth_token;
               resolve(res);
             }, (err) => {
               reject(err);
@@ -46,17 +44,16 @@ export class UsuarioService {
         });
     }
     
-    setCurrentUser(reg){
-        this.current_user = reg;
-    }
-    
     getCurrentUser(){
         return this.current_user;
     }
     
-    getCurretUserName(){
+    getCurrentUserName(){
         return new Promise((resolve, reject) => {
-            this._http.get(this.api + '/users_reg?reg=' + this.current_user)
+            let headers = new Headers();
+            headers.set('Authorization', this.current_user);
+            let options = new RequestOptions({ headers: headers });
+            this._http.get(this.api + '/users_reg', options)
             .map(res => res.json())
             .subscribe(res => {
               resolve(res.name);
@@ -68,7 +65,10 @@ export class UsuarioService {
     
     getTeacherId(){
         return new Promise((resolve, reject) => {
-            this._http.get(this.api + '/users_reg?reg=' + this.current_user)
+            let headers = new Headers();
+            headers.set('Authorization', this.current_user);
+            let options = new RequestOptions({ headers: headers });
+            this._http.get(this.api + '/users_reg', options)
             .map(res => res.json())
             .subscribe(res => {
               resolve(res.teacher_id);
@@ -80,7 +80,10 @@ export class UsuarioService {
     
     getUsuario(){
         return new Promise((resolve, reject) => {
-            this._http.get(this.api + '/users_reg?reg=' + this.current_user)
+            let headers = new Headers();
+            headers.set('Authorization', this.current_user);
+            let options = new RequestOptions({ headers: headers });
+            this._http.get(this.api + '/users_reg', options)
             .map(res => res.json())
             .subscribe(res => {
               resolve(res.teacher);
@@ -92,7 +95,12 @@ export class UsuarioService {
     
     changePassword(data){
         return new Promise((resolve, reject) => {
-            this._http.post(this.api + '/change', {'reg': this.current_user, 'password': data.password, 'password_new': data.password_new, 'password_new_confirmation': data.password_new_confirmation})
+            let headers = new Headers();
+            headers.set('Authorization', this.current_user);
+            let options = new RequestOptions({ headers: headers });
+            this._http.post(this.api + '/change',
+             {'reg': this.current_user, 'password': data.password, 'password_new': data.password_new, 'password_new_confirmation': data.password_new_confirmation},
+             options)
             .map(res => res.json())
             .subscribe(res => {
               resolve(res);

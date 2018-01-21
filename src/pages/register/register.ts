@@ -28,7 +28,9 @@ export class RegisterPage {
       console.log(result);
         this._service.login(this.user).then((result) => {
           if (result){
-            this._service.setCurrentUser(this.user.reg);
+            // LOGIN AUTOMATICALLY
+            this._service.login({reg: this.user.reg, password: this.user.password});
+
             loader.dismiss();
             let alert = this._alertCtrl.create({
               title: 'Olá!',

@@ -92,22 +92,10 @@ export class StatsPage {
         });
 
         loader.present();
-
-        this._userService.getTeacherId().then((result) => {
-            this.teacherService.stats(1, result).then((result) => {
-                this.firstChart = result;
-                loader.dismiss();
-                console.log(this.firstChart);
-            }, (err) => {
-                loader.dismiss();
-                console.log(err);
-                let alert = this._alertCtrl.create({
-                title: 'Falha na conexão!',
-                buttons: [{ text: 'Estou ciente' }],
-                subTitle: 'Não foi possível obter as estatísticas do professor. Tente mais tarde.'
-                });
-                alert.present();
-            });    
+        let current_user = this._userService.getCurrentUser();
+        this.teacherService.stats(1, current_user).then((result) => {
+            this.firstChart = result;
+            loader.dismiss();
         }, (err) => {
             loader.dismiss();
             console.log(err);

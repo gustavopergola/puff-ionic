@@ -21,17 +21,14 @@ export class CommentsPage {
   }
 
   getFeedback(){
-    this._service.getTeacherId().then((result) => {
-      //alert(result); //ok
-      this._serviceTeacher.feedback(result).then((result) => {
-        this.aux = result;
-      }, (err) => {
-        console.log(err);
-      });
+    let current_user = this._service.getCurrentUser();
+    this._serviceTeacher.feedback(current_user).then((result) => {
+      this.aux = result;
     }, (err) => {
       console.log(err);
     });
   }
+  
 
   
   openModal(id){
@@ -51,10 +48,8 @@ export class CommentsPage {
 
   ngAfterViewChecked (){
     var counters = document.getElementsByClassName("counter");
-    console.log(counters);
     for (var index = 0; index < counters.length; index++) {
       counters[index].innerHTML = (index + 1).toString(); 
     }
   }
-
 }

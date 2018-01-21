@@ -39,7 +39,6 @@ export class DashboardPage {
   }
   
  logout(){
-   console.log('entrou');
    this._service.logout();
    this.navCtrl.setRoot(HomePage);
  }
@@ -47,7 +46,7 @@ export class DashboardPage {
    this.navCtrl.push(ShowteacherPage);
  }
  setUserName(){
-    this._service.getCurretUserName().then((result) => {
+    this._service.getCurrentUserName().then((result) => {
       this.user_name = result;
     }, (err) => {
       console.log(err);
