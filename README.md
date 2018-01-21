@@ -11,6 +11,10 @@ professor que faça mais sentido para ele.
 - Node 6.11
 
 ## Como usar
-    Dê pull no projeto
+Instale nodejs 6.11 na sua máquina (veja NVM)
+
+    git clone https://github.com/Vipkry/puff-ionic
+    cd puff-ionic
     npm install chart.js
+    ionic serve --lab
       
